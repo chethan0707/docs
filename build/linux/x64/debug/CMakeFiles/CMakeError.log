@@ -1,0 +1,18 @@
+Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" failed.
+Compiler: /snap/flutter/current/usr/bin/clang++ 
+Build flags: 
+Id flags:  
+
+The output was:
+1
+/snap/flutter/current/usr/bin/ld: warning: /usr/lib64/gcc/x86_64-pc-linux-gnu/12.2.0/../../../../lib64/crt1.o: unsupported GNU_PROPERTY_TYPE (5) type: 0xc0008002
+/snap/flutter/current/usr/bin/ld: warning: /usr/lib64/gcc/x86_64-pc-linux-gnu/12.2.0/../../../../lib64/crt1.o: unsupported GNU_PROPERTY_TYPE (5) type: 0xc0010001
+/snap/flutter/current/usr/bin/ld: warning: /usr/lib64/gcc/x86_64-pc-linux-gnu/12.2.0/../../../../lib64/crt1.o: unsupported GNU_PROPERTY_TYPE (5) type: 0xc0010002
+/snap/flutter/current/usr/bin/ld: warning: /usr/lib64/gcc/x86_64-pc-linux-gnu/12.2.0/../../../../lib64/crti.o: unsupported GNU_PROPERTY_TYPE (5) type: 0xc0010002
+/snap/flutter/current/usr/bin/ld: warning: /usr/lib64/gcc/x86_64-pc-linux-gnu/12.2.0/../../../../lib64/crti.o: unsupported GNU_PROPERTY_TYPE (5) type: 0xc0010001
+/snap/flutter/current/usr/bin/ld: /usr/lib64/gcc/x86_64-pc-linux-gnu/12.2.0/../../../../lib64/crti.o: unable to initialize decompress status for section .debug_line
+/snap/flutter/current/usr/bin/ld: /usr/lib64/gcc/x86_64-pc-linux-gnu/12.2.0/../../../../lib64/crti.o: unable to initialize decompress status for section .debug_line
+/usr/lib64/gcc/x86_64-pc-linux-gnu/12.2.0/../../../../lib64/crti.o: file not recognized: File format not recognized
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+
+
