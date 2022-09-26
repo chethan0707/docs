@@ -28,6 +28,11 @@ class _MyAppState extends ConsumerState<MyApp> {
     getUserData();
   }
 
+  void signOut(WidgetRef ref) {
+    ref.read(authRepositoryProvider).signOut();
+    ref.read(userProvider.notifier).update((state) => null);
+  }
+
   void getUserData() async {
     log("Hello ");
     errorModel = await ref.read(authRepositoryProvider).getUserData();
@@ -40,6 +45,7 @@ class _MyAppState extends ConsumerState<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp.router(
+      debugShowCheckedModeBanner: false,
       routerDelegate: RoutemasterDelegate(
         routesBuilder: (context) {
           final user = ref.watch(userProvider);
