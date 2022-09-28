@@ -80,4 +80,48 @@ class DocumentRepository {
       return errorModel;
     }
   }
+
+  void updateDocument({
+    required String token,
+    required String id,
+    required String title,
+  }) async {
+    await _client.post(
+      Uri.parse('$host/doc/title'),
+      headers: {
+        'Content-Type': 'application/json; charset=UTF-8',
+        'x-auth-token': token,
+      },
+      body: jsonEncode({
+        'title': title,
+        'id': id,
+      }),
+    );
+  }
+
+  Future<ErrorModel> getDocument(String token, String id) async {
+    ErrorModel errorModel =
+        ErrorModel(error: 'Something went wrone', data: null);
+    try {
+      var res = await _client.get(
+        Uri.parse('$host/doc/$id'),
+        headers: {
+          'Content-Type': 'application/json; charset=UTF-8',
+          'x-auth-token': token,
+        },
+      );
+      switch (res.statusCode) {
+        case 200:
+          errorModel =
+              ErrorModel(error: null, data: DocumentModel.fromJson(res.body));
+          break;
+        default:
+          throw 'This document does not exist!!';
+      }
+      return errorModel;
+    } catch (e) {
+      errorModel = ErrorModel(error: e.toString(), data: null);
+      return errorModel;
+    }
+  }
 }
